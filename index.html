@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#070707">
+
+<title>Blackdiamond Oto Yıkama | Mersin</title>
+<meta name="description" content="Blackdiamond Oto Yıkama için hazırlanmış özel web sitesi tasarım önizlemesi. Akdeniz, Mersin.">
+<meta name="robots" content="noindex,nofollow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --black:#050505;
+  --black2:#0a0a0b;
+  --panel:#101011;
+  --panel2:#151516;
+  --line:rgba(255,255,255,.12);
+  --soft:rgba(255,255,255,.62);
+  --white:#f5f4ef;
+  --silver:#bfc1c5;
+  --diamond:#e8ebef;
+  --accent:#ffffff;
+  --max:1380px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--black);
+  color:var(--white);
+  font-family:"DM Sans",sans-serif;
+  overflow-x:hidden;
+}
+body.menu-open{overflow:hidden}
+::selection{background:white;color:black}
+a{text-decoration:none;color:inherit}
+button{font:inherit}
+img{width:100%;display:block}
+section{position:relative}
+.container{width:min(92%,var(--max));margin:auto}
+
+/* noise */
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  opacity:.035;
+  z-index:9998;
+  pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+}
+
+/* cursor */
+.cursor{
+  position:fixed;
+  width:11px;height:11px;
+  background:white;
+  border-radius:50%;
+  pointer-events:none;
+  z-index:10000;
+  transform:translate(-50%,-50%);
+  mix-blend-mode:difference;
+}
+.cursor-ring{
+  position:fixed;
+  width:42px;height:42px;
+  border:1px solid rgba(255,255,255,.5);
+  border-radius:50%;
+  pointer-events:none;
+  z-index:9999;
+  transform:translate(-50%,-50%);
+  transition:width .2s,height .2s;
+}
+
+/* loader */
+.loader{
+  position:fixed;
+  inset:0;
+  z-index:20000;
+  background:#050505;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:opacity .8s,visibility .8s;
+}
+.loader.hide{opacity:0;visibility:hidden}
+.loader-inner{text-align:center}
+.loader-diamond{
+  width:60px;height:60px;
+  margin:auto auto 25px;
+  border:1px solid rgba(255,255,255,.7);
+  transform:rotate(45deg);
+  animation:diamondPulse 1.4s ease-in-out infinite;
+}
+.loader-name{
+  letter-spacing:.38em;
+  font-size:12px;
+  margin-left:.38em;
+}
+.loader-line{
+  width:180px;height:1px;background:#222;
+  margin:22px auto 0;overflow:hidden
+}
+.loader-line:after{
+  content:"";display:block;width:60%;height:100%;background:white;
+  animation:load 1.3s infinite
+}
+@keyframes load{from{transform:translateX(-120%)}to{transform:translateX(200%)}}
+@keyframes diamondPulse{
+  50%{transform:rotate(225deg) scale(.7);opacity:.35}
+}
+
+/* nav */
+nav{
+  position:fixed;
+  top:0;left:0;width:100%;
+  z-index:1000;
+  border-bottom:1px solid transparent;
+  transition:.35s;
+}
+nav.scrolled{
+  background:rgba(5,5,5,.83);
+  backdrop-filter:blur(18px);
+  border-color:var(--line);
+}
+.nav-inner{
+  width:min(94%,var(--max));
+  height:88px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.logo{
+  font-family:Manrope,sans-serif;
+  font-size:17px;
+  font-weight:800;
+  letter-spacing:.16em;
+}
+.logo span{font-weight:300;color:#9b9b9b}
+.nav-links{display:flex;gap:34px;align-items:center}
+.nav-links a{
+  color:#c6c6c6;font-size:12px;letter-spacing:.08em;
+  transition:.25s
+}
+.nav-links a:hover{color:white}
+.nav-call{
+  border:1px solid rgba(255,255,255,.25);
+  padding:13px 19px;
+}
+.menu-btn{
+  display:none;background:none;border:0;color:white;
+  width:38px;height:38px;cursor:pointer
+}
+.menu-btn span{
+  display:block;width:27px;height:1px;background:white;
+  margin:7px auto;transition:.3s
+}
+
+/* hero */
+.hero{
+  min-height:100svh;
+  display:flex;
+  align-items:flex-end;
+  overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(90deg,rgba(0,0,0,.94) 0%,rgba(0,0,0,.58) 45%,rgba(0,0,0,.18) 75%),
+    linear-gradient(0deg,#050505 0%,transparent 38%),
+    url("https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=2200&q=88") center 58%/cover;
+  transform:scale(1.05);
+  animation:heroZoom 9s ease-out forwards;
+}
+@keyframes heroZoom{to{transform:scale(1)}}
+.hero-glow{
+  position:absolute;
+  width:600px;height:600px;
+  border-radius:50%;
+  background:rgba(255,255,255,.055);
+  filter:blur(100px);
+  right:-200px;top:20%;
+}
+.hero-content{
+  position:relative;
+  z-index:2;
+  width:min(92%,var(--max));
+  margin:0 auto;
+  padding:180px 0 72px;
+}
+.eyebrow{
+  display:flex;align-items:center;gap:12px;
+  font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+  color:#bcbcbc;margin-bottom:25px
+}
+.eyebrow:before{content:"";width:35px;height:1px;background:#aaa}
+.hero h1{
+  font-family:Manrope,sans-serif;
+  font-size:clamp(58px,10.4vw,155px);
+  line-height:.79;
+  letter-spacing:-.075em;
+  text-transform:uppercase;
+  max-width:1150px;
+}
+.hero h1 .outline{
+  color:transparent;
+  -webkit-text-stroke:1px rgba(255,255,255,.55);
+}
+.hero-bottom{
+  margin-top:48px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:35px
+}
+.hero-copy{max-width:480px;color:#c2c2c2;line-height:1.8;font-size:15px}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap}
+.btn{
+  min-height:54px;
+  padding:0 25px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:11px;
+  border:1px solid rgba(255,255,255,.25);
+  font-size:12px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  transition:.3s;
+  cursor:pointer
+}
+.btn-white{background:white;color:black;border-color:white}
+.btn:hover{transform:translateY(-3px)}
+.btn-dark:hover{background:white;color:black}
+
+/* ticker */
+.ticker{
+  overflow:hidden;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  background:#080808;
+}
+.ticker-track{
+  width:max-content;
+  display:flex;
+  animation:ticker 26s linear infinite;
+}
+.ticker-item{
+  padding:22px 34px;
+  font-family:Manrope,sans-serif;
+  font-size:12px;
+  letter-spacing:.17em;
+  color:#aaa;
+  text-transform:uppercase;
+  white-space:nowrap
+}
+.ticker-item:after{
+  content:"◆";
+  color:#eee;
+  margin-left:68px;
+  font-size:8px
+}
+@keyframes ticker{to{transform:translateX(-50%)}}
+
+/* intro */
+.intro{padding:150px 0}
+.intro-grid{
+  display:grid;
+  grid-template-columns:.8fr 2fr;
+  gap:90px;
+}
+.section-no{color:#777;font-size:11px;letter-spacing:.15em}
+.big-copy{
+  font-family:Manrope,sans-serif;
+  font-size:clamp(34px,5.3vw,76px);
+  line-height:1.08;
+  letter-spacing:-.045em;
+  font-weight:400
+}
+.big-copy .muted{color:#555}
+.intro-small{
+  margin:45px 0 0 auto;
+  max-width:520px;
+  color:#909090;
+  font-size:15px;
+  line-height:1.85
+}
+
+/* diamond statement */
+.diamond-stage{
+  min-height:660px;
+  background:#ecece8;
+  color:#090909;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+}
+.diamond-shape{
+  position:absolute;
+  width:410px;height:410px;
+  border:1px solid rgba(0,0,0,.18);
+  transform:rotate(45deg);
+}
+.diamond-shape:before,.diamond-shape:after{
+  content:"";position:absolute;inset:42px;border:1px solid rgba(0,0,0,.12)
+}
+.diamond-shape:after{inset:100px}
+.diamond-content{
+  position:relative;z-index:2;text-align:center;
+  max-width:900px;padding:80px 25px
+}
+.diamond-content small{
+  text-transform:uppercase;letter-spacing:.22em;font-size:10px
+}
+.diamond-content h2{
+  font-family:Manrope,sans-serif;
+  font-size:clamp(45px,8vw,112px);
+  line-height:.9;letter-spacing:-.065em;
+  margin:30px 0
+}
+.diamond-content p{max-width:550px;margin:auto;line-height:1.8;color:#4c4c4c}
+
+/* services */
+.services{padding:150px 0}
+.section-head{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  gap:30px;margin-bottom:70px
+}
+.section-head h2{
+  font-family:Manrope,sans-serif;
+  font-size:clamp(45px,6vw,85px);
+  line-height:.92;letter-spacing:-.055em;font-weight:500
+}
+.section-head p{max-width:410px;color:#888;line-height:1.7}
+.service-list{border-top:1px solid var(--line)}
+.service{
+  display:grid;
+  grid-template-columns:90px 1fr 1fr 50px;
+  align-items:center;
+  gap:30px;
+  min-height:150px;
+  border-bottom:1px solid var(--line);
+  transition:.35s;
+  position:relative;
+  overflow:hidden
+}
+.service:before{
+  content:"";position:absolute;inset:0;
+  background:white;
+  transform:translateY(101%);
+  transition:.4s cubic-bezier(.77,0,.18,1);
+}
+.service:hover:before{transform:none}
+.service>*{position:relative;z-index:2}
+.service:hover{color:#080808}
+.service-num{font-size:11px;color:#707070}
+.service h3{
+  font-family:Manrope,sans-serif;
+  font-size:clamp(25px,3vw,42px);
+  font-weight:400;letter-spacing:-.03em
+}
+.service p{color:#808080;line-height:1.65;font-size:14px}
+.service:hover p,.service:hover .service-num{color:#444}
+.arrow{font-size:24px}
+
+/* image break */
+.image-break{
+  height:80vh;min-height:620px;
+  overflow:hidden;
+}
+.image-break img{
+  width:100%;height:115%;object-fit:cover;
+  filter:saturate(.7) contrast(1.1);
+  position:absolute;top:-7%
+}
+.image-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(0,0,0,.72),transparent 70%)
+}
+.image-copy{
+  position:absolute;left:4%;bottom:8%;z-index:3;
+  max-width:720px
+}
+.image-copy h2{
+  font-family:Manrope,sans-serif;
+  font-size:clamp(48px,7vw,100px);
+  line-height:.9;letter-spacing:-.06em
+}
+
+/* process */
+.process{padding:150px 0;background:#0b0b0c}
+.process-grid{
+  display:grid;grid-template-columns:1fr 2fr;gap:100px
+}
+.process-title{
+  position:sticky;top:130px;height:max-content
+}
+.process-title h2{
+  font-family:Manrope;font-size:55px;line-height:.95;letter-spacing:-.05em
+}
+.steps{border-top:1px solid var(--line)}
+.step{
+  padding:45px 0;border-bottom:1px solid var(--line);
+  display:grid;grid-template-columns:70px 1fr;gap:25px
+}
+.step-num{font-size:11px;color:#777;padding-top:8px}
+.step h3{font-family:Manrope;font-size:27px;margin-bottom:12px}
+.step p{color:#858585;line-height:1.75;max-width:620px}
+
+/* gallery */
+.gallery{padding:150px 0}
+.gallery-grid{
+  display:grid;
+  grid-template-columns:1.25fr .75fr;
+  grid-template-rows:520px 360px;
+  gap:14px
+}
+.gallery-card{overflow:hidden;position:relative;background:#111}
+.gallery-card:nth-child(1){grid-row:1/3}
+.gallery-card img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .8s cubic-bezier(.2,.7,.2,1),filter .5s;
+  filter:saturate(.72)
+}
+.gallery-card:hover img{transform:scale(1.045);filter:saturate(1)}
+.gallery-label{
+  position:absolute;left:22px;bottom:20px;
+  font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+  background:rgba(0,0,0,.55);backdrop-filter:blur(8px);
+  padding:10px 12px
+}
+
+/* compare */
+.compare-section{padding:50px 0 150px}
+.compare-wrap{
+  position:relative;
+  height:650px;
+  overflow:hidden;
+  user-select:none;
+  cursor:ew-resize
+}
+.compare-wrap img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover
+}
+.compare-after{
+  position:absolute;inset:0;
+  width:50%;overflow:hidden
+}
+.compare-after img{
+  width:100vw;
+  max-width:var(--max);
+}
+.compare-line{
+  position:absolute;top:0;bottom:0;left:50%;
+  width:1px;background:white;z-index:5
+}
+.compare-handle{
+  position:absolute;left:50%;top:50%;z-index:6;
+  transform:translate(-50%,-50%);
+  width:58px;height:58px;border-radius:50%;
+  background:white;color:black;
+  display:grid;place-items:center;font-size:17px
+}
+.compare-tag{
+  position:absolute;top:22px;z-index:6;
+  padding:10px 13px;background:rgba(0,0,0,.6);
+  backdrop-filter:blur(8px);
+  font-size:10px;letter-spacing:.15em;text-transform:uppercase
+}
+.before-tag{right:22px}
+.after-tag{left:22px}
+
+/* info */
+.info{
+  padding:140px 0;
+  background:#ededE9;color:#090909
+}
+.info-grid{
+  display:grid;grid-template-columns:1.1fr .9fr;gap:100px
+}
+.info h2{
+  font-family:Manrope;font-size:clamp(48px,7vw,95px);
+  line-height:.9;letter-spacing:-.06em
+}
+.info-right{padding-top:15px}
+.info-row{
+  padding:26px 0;border-bottom:1px solid rgba(0,0,0,.17);
+  display:grid;grid-template-columns:140px 1fr;gap:20px
+}
+.info-label{
+  font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#777
+}
+.info-value{font-size:17px;line-height:1.6}
+.info-actions{display:flex;gap:10px;margin-top:35px;flex-wrap:wrap}
+.info .btn{border-color:#222}
+.info .btn-white{background:#080808;color:white;border-color:#080808}
+
+/* FAQ */
+.faq{padding:140px 0}
+.faq-layout{display:grid;grid-template-columns:.8fr 1.5fr;gap:100px}
+.faq-title h2{
+  font-family:Manrope;font-size:55px;letter-spacing:-.05em
+}
+.faq-item{border-top:1px solid var(--line)}
+.faq-item:last-child{border-bottom:1px solid var(--line)}
+.faq-q{
+  width:100%;background:none;border:0;color:white;
+  padding:28px 0;
+  display:flex;justify-content:space-between;gap:20px;
+  text-align:left;cursor:pointer;font-size:17px
+}
+.faq-q span:last-child{font-size:25px;font-weight:200;transition:.3s}
+.faq-a{
+  max-height:0;overflow:hidden;color:#858585;
+  line-height:1.75;transition:max-height .4s ease
+}
+.faq-a p{padding:0 40px 28px 0}
+.faq-item.open .faq-a{max-height:180px}
+.faq-item.open .faq-q span:last-child{transform:rotate(45deg)}
+
+/* CTA */
+.final-cta{
+  min-height:720px;
+  display:grid;place-items:center;
+  text-align:center;overflow:hidden
+}
+.final-bg{
+  position:absolute;inset:0;
+  background:
+   linear-gradient(rgba(0,0,0,.66),rgba(0,0,0,.86)),
+   url("https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=2200&q=88") center/cover
+}
+.final-content{position:relative;z-index:2;padding:100px 20px}
+.final-content small{
+  font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:#bbb
+}
+.final-content h2{
+  font-family:Manrope;
+  font-size:clamp(55px,10vw,145px);
+  line-height:.8;letter-spacing:-.075em;
+  margin:30px 0 45px
+}
+.final-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+
+/* footer */
+footer{padding:65px 0 110px;border-top:1px solid var(--line)}
+.footer-grid{
+  display:grid;grid-template-columns:1.4fr .6fr .6fr;gap:60px
+}
+.footer-brand{
+  font-family:Manrope;font-weight:700;letter-spacing:.13em;font-size:20px
+}
+.footer-note{color:#666;line-height:1.7;font-size:13px;margin-top:20px;max-width:430px}
+.footer-col small{
+  display:block;color:#555;text-transform:uppercase;
+  letter-spacing:.14em;font-size:9px;margin-bottom:20px
+}
+.footer-col a,.footer-col p{
+  display:block;color:#aaa;font-size:13px;margin:11px 0
+}
+.preview-note{
+  margin-top:60px;padding-top:25px;border-top:1px solid var(--line);
+  color:#555;font-size:11px;line-height:1.7
+}
+
+/* floating mobile */
+.mobile-bar{display:none}
+
+/* reveal */
+.reveal{
+  opacity:0;
+  transform:translateY(35px);
+  transition:opacity .8s ease,transform .8s ease
+}
+.reveal.visible{opacity:1;transform:none}
+
+/* responsive */
+@media(max-width:900px){
+  .cursor,.cursor-ring{display:none}
+  .nav-links{display:none}
+  .menu-btn{display:block}
+  .nav-inner{height:72px}
+  .mobile-menu{
+    position:fixed;inset:0;background:#070707;z-index:900;
+    display:flex;flex-direction:column;justify-content:center;
+    padding:35px;
+    transform:translateY(-100%);transition:.45s
+  }
+  .mobile-menu.open{transform:none}
+  .mobile-menu a{
+    font-family:Manrope;font-size:40px;letter-spacing:-.04em;
+    padding:11px 0;border-bottom:1px solid var(--line)
+  }
+  .hero-content{padding-bottom:50px}
+  .hero-bottom{display:block}
+  .hero-copy{margin-bottom:25px}
+  .intro{padding:100px 0}
+  .intro-grid,.process-grid,.info-grid,.faq-layout{
+    grid-template-columns:1fr;gap:50px
+  }
+  .service{
+    grid-template-columns:40px 1fr 30px;
+    gap:15px;padding:28px 0
+  }
+  .service p{grid-column:2/4}
+  .process-title{position:static}
+  .gallery-grid{
+    grid-template-columns:1fr;
+    grid-template-rows:480px 330px 330px
+  }
+  .gallery-card:nth-child(1){grid-row:auto}
+  .compare-wrap{height:520px}
+  .compare-after img{width:92vw}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .footer-grid>div:first-child{grid-column:1/3}
+  .diamond-shape{width:300px;height:300px}
+}
+@media(max-width:600px){
+  .hero h1{font-size:17vw}
+  .hero-bg{
+    background:
+      linear-gradient(0deg,#050505 0%,rgba(0,0,0,.3) 60%,rgba(0,0,0,.3)),
+      url("https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1200&q=85") 62% center/cover
+  }
+  .hero-actions .btn{width:100%}
+  .section-head{display:block}
+  .section-head p{margin-top:25px}
+  .intro-grid{gap:35px}
+  .services,.process,.gallery,.faq{padding:100px 0}
+  .service h3{font-size:26px}
+  .image-break{height:70vh;min-height:550px}
+  .gallery-grid{grid-template-rows:420px 270px 270px}
+  .compare-wrap{height:430px}
+  .info{padding:100px 0}
+  .info-row{grid-template-columns:1fr;gap:8px}
+  .final-cta{min-height:620px}
+  footer{padding-bottom:120px}
+  .mobile-bar{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    position:fixed;bottom:0;left:0;right:0;
+    z-index:8000;
+    background:#0b0b0b;
+    border-top:1px solid var(--line)
+  }
+  .mobile-bar a{
+    height:62px;display:grid;place-items:center;
+    text-transform:uppercase;font-size:10px;letter-spacing:.1em
+  }
+  .mobile-bar a:first-child{background:white;color:black}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{
+    scroll-behavior:auto!important;
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="loader" id="loader">
+  <div class="loader-inner">
+    <div class="loader-diamond"></div>
+    <div class="loader-name">BLACKDIAMOND</div>
+    <div class="loader-line"></div>
+  </div>
+</div>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#hakkinda">Hakkında</a>
+  <a href="#hizmetler">Hizmetler</a>
+  <a href="#calismalar">Çalışmalar</a>
+  <a href="#iletisim">İletişim</a>
+</div>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#" class="logo">BLACKDIAMOND <span>/ MERSİN</span></a>
+
+    <div class="nav-links">
+      <a href="#hakkinda">Hakkında</a>
+      <a href="#hizmetler">Hizmetler</a>
+      <a href="#calismalar">Çalışmalar</a>
+      <a href="#iletisim">İletişim</a>
+      <a class="nav-call" href="tel:+905339663433">0533 966 34 33</a>
+    </div>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Menüyü aç">
+      <span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<main>
+
+<section class="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-glow"></div>
+
+  <div class="hero-content">
+    <div class="eyebrow">Akdeniz · Mersin</div>
+
+    <h1>
+      BLACK<br>
+      <span class="outline">DIAMOND</span>
+    </h1>
+
+    <div class="hero-bottom">
+      <p class="hero-copy">
+        Aracınız yalnızca temizlenmez. Detaylara gösterilen özen,
+        otomobilinizin görünümünü yeniden öne çıkarır.
+        Blackdiamond otomotiv bakım deneyimi için hazırlanmış özel tasarım.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-white" href="https://wa.me/905339663433?text=Merhaba%20Blackdiamond%2C%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">
+          WhatsApp
+          <span>↗</span>
+        </a>
+        <a class="btn btn-dark" href="#hizmetler">Hizmetleri keşfet ↓</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker">
+  <div class="ticker-track">
+    <div class="ticker-item">Automotive Care</div>
+    <div class="ticker-item">Detailing</div>
+    <div class="ticker-item">Deep Clean</div>
+    <div class="ticker-item">Paint Finish</div>
+    <div class="ticker-item">Mersin</div>
+
+    <div class="ticker-item">Automotive Care</div>
+    <div class="ticker-item">Detailing</div>
+    <div class="ticker-item">Deep Clean</div>
+    <div class="ticker-item">Paint Finish</div>
+    <div class="ticker-item">Mersin</div>
+  </div>
+</div>
+
+<section class="intro" id="hakkinda">
+  <div class="container intro-grid">
+    <div class="section-no reveal">01 / BLACKDIAMOND</div>
+
+    <div>
+      <h2 class="big-copy reveal">
+        TEMİZLİKTEN<br>
+        <span class="muted">DAHA FAZLASI.</span>
+      </h2>
+
+      <p class="intro-small reveal">
+        Otomobilin karakterini oluşturan şey ayrıntılardır.
+        Blackdiamond için hazırlanan bu dijital deneyim;
+        araç bakımını sıradan bir işlem değil, özen ve detay odaklı
+        bir süreç olarak sunmak üzere tasarlandı.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="diamond-stage">
+  <div class="diamond-shape" id="diamondShape"></div>
+
+  <div class="diamond-content reveal">
+    <small>Blackdiamond philosophy</small>
+    <h2>DETAIL<br>IS EVERYTHING.</h2>
+    <p>
+      İyi bir sonuç uzaktan fark edilir.
+      İyi işçilik ise yakından bakıldığında anlaşılır.
+    </p>
+  </div>
+</section>
+
+<section class="services" id="hizmetler">
+  <div class="container">
+
+    <div class="section-head">
+      <div>
+        <div class="eyebrow reveal">Hizmet yaklaşımı</div>
+        <h2 class="reveal">ARACINA<br>ÖZEN GÖSTER.</h2>
+      </div>
+
+      <p class="reveal">
+        Aşağıdaki alanlar demo sunumu için hazırlanmıştır.
+        Nihai hizmet listesi işletmenin güncel hizmetleriyle
+        birlikte doğrulanarak düzenlenebilir.
+      </p>
+    </div>
+
+    <div class="service-list">
+
+      <div class="service reveal">
+        <span class="service-num">01</span>
+        <h3>Premium Oto Yıkama</h3>
+        <p>Dış yüzeyin temiz ve düzenli bir görünüm kazanmasına odaklanan bakım yaklaşımı.</p>
+        <span class="arrow">↗</span>
+      </div>
+
+      <div class="service reveal">
+        <span class="service-num">02</span>
+        <h3>Detaylı İç Temizlik</h3>
+        <p>Kabin içindeki görünür yüzeylerden ulaşılması güç detaylara kadar kapsamlı temizlik sunumu.</p>
+        <span class="arrow">↗</span>
+      </div>
+
+      <div class="service reveal">
+        <span class="service-num">03</span>
+        <h3>Detailing</h3>
+        <p>Aracın genel görünümünü daha rafine hâle getirmeye odaklanan detay bakım alanı.</p>
+        <span class="arrow">↗</span>
+      </div>
+
+      <div class="service reveal">
+        <span class="service-num">04</span>
+        <h3>Yüzey Bakımı</h3>
+        <p>Araç yüzeyinin görünümünü öne çıkarmaya yönelik uygulamalar için ayrılmış premium sunum alanı.</p>
+        <span class="arrow">↗</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="image-break">
+  <img
+    src="https://images.unsplash.com/photo-1550355291-bbee04a92027?auto=format&fit=crop&w=2200&q=88"
+    alt="Premium otomobil"
+    loading="lazy"
+  >
+  <div class="image-overlay"></div>
+
+  <div class="image-copy">
+    <div class="eyebrow">The finish matters</div>
+    <h2>HER AÇIDAN<br>KUSURSUZ<br>GÖRÜNÜM.</h2>
+  </div>
+</section>
+
+<section class="process">
+  <div class="container process-grid">
+
+    <div class="process-title reveal">
+      <div class="eyebrow">Süreç</div>
+      <h2>ÖZEN<br>ADIM<br>ADIM.</h2>
+    </div>
+
+    <div class="steps">
+
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <div>
+          <h3>Aracı Tanı</h3>
+          <p>Her araç aynı değildir. İhtiyaç duyulan uygulama ve beklenti önce belirlenir.</p>
+        </div>
+      </div>
+
+      <div class="step reveal">
+        <div class="step-num">02</div>
+        <div>
+          <h3>Doğru Uygulamayı Belirle</h3>
+          <p>Aracın mevcut durumuna göre bakım yaklaşımı ve uygulanacak işlemler netleştirilir.</p>
+        </div>
+      </div>
+
+      <div class="step reveal">
+        <div class="step-num">03</div>
+        <div>
+          <h3>Detaylara Odaklan</h3>
+          <p>Genel görünüm kadar küçük ayrıntıların oluşturduğu bütünlük de önemsenir.</p>
+        </div>
+      </div>
+
+      <div class="step reveal">
+        <div class="step-num">04</div>
+        <div>
+          <h3>Son Kontrol</h3>
+          <p>İşlem tamamlandıktan sonra araç genel görünümü üzerinden yeniden değerlendirilir.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="calismalar">
+  <div class="container">
+
+    <div class="section-head">
+      <div>
+        <div class="eyebrow reveal">Selected visuals</div>
+        <h2 class="reveal">GÖRÜNÜM<br>KONUŞSUN.</h2>
+      </div>
+
+      <p class="reveal">
+        Bu görseller tasarım önizlemesinde atmosferi göstermek için
+        kullanılan temsilî otomotiv fotoğraflarıdır.
+        İşletmenin kendi fotoğraflarıyla değiştirilebilir.
+      </p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-card reveal">
+        <img
+          src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1600&q=88"
+          alt="Otomobil detay görünümü"
+          loading="lazy">
+        <div class="gallery-label">Exterior / Finish</div>
+      </div>
+
+      <div class="gallery-card reveal">
+        <img
+          src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1300&q=88"
+          alt="Premium otomobil"
+          loading="lazy">
+        <div class="gallery-label">Detail / Surface</div>
+      </div>
+
+      <div class="gallery-card reveal">
+        <img
+          src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1300&q=88"
+          alt="Otomobil"
+          loading="lazy">
+        <div class="gallery-label">Automotive / Care</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="compare-section">
+  <div class="container">
+
+    <div class="section-head">
+      <div>
+        <div class="eyebrow reveal">Interactive experience</div>
+        <h2 class="reveal">FARKI<br>HİSSET.</h2>
+      </div>
+
+      <p class="reveal">
+        Kaydırıcıyı hareket ettir.
+        Bu alan gerçek müşteri çalışmalarının önce/sonra fotoğrafları
+        geldiğinde onların sergilenmesi için tasarlandı.
+      </p>
+    </div>
+
+    <div class="compare-wrap reveal" id="compare">
+
+      <img
+        src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1800&q=72"
+        alt="Temsilî otomobil görseli">
+
+      <div class="compare-after" id="compareAfter">
+        <img
+          src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1800&q=95"
+          alt="Temsilî otomobil görseli">
+      </div>
+
+      <div class="compare-tag before-tag">Before</div>
+      <div class="compare-tag after-tag">After</div>
+
+      <div class="compare-line" id="compareLine"></div>
+      <div class="compare-handle" id="compareHandle">↔</div>
+
+    </div>
+  </div>
+</section>
+
+<section class="info" id="iletisim">
+  <div class="container info-grid">
+
+    <div class="reveal">
+      <div class="eyebrow" style="color:#555">Blackdiamond · Mersin</div>
+      <h2>ARACIN<br>HAZIR MI?</h2>
+    </div>
+
+    <div class="info-right reveal">
+
+      <div class="info-row">
+        <div class="info-label">Telefon</div>
+        <div class="info-value">
+          <a href="tel:+905339663433">0533 966 34 33</a>
+        </div>
+      </div>
+
+      <div class="info-row">
+        <div class="info-label">Bölge</div>
+        <div class="info-value">Akdeniz · Mersin</div>
+      </div>
+
+      <div class="info-row">
+        <div class="info-label">Adres</div>
+        <div class="info-value">
+          İhsaniye, Bahçeler Cd.<br>
+          Akdeniz / Mersin
+        </div>
+      </div>
+
+      <div class="info-row">
+        <div class="info-label">Saatler</div>
+        <div class="info-value">
+          Güncel çalışma saatleri için işletmeyle iletişime geçin.
+        </div>
+      </div>
+
+      <div class="info-actions">
+        <a class="btn btn-white"
+           href="https://wa.me/905339663433?text=Merhaba%20Blackdiamond%2C%20hizmetleriniz%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+           target="_blank" rel="noopener">
+          WhatsApp'tan yaz ↗
+        </a>
+
+        <a class="btn"
+           href="https://www.google.com/maps/search/?api=1&query=Blackdiamond+Oto+Yikama+Akdeniz+Mersin"
+           target="_blank" rel="noopener">
+          Yol tarifi ↗
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="container faq-layout">
+
+    <div class="faq-title reveal">
+      <div class="eyebrow">Bilgi</div>
+      <h2>SIKÇA<br>SORULANLAR.</h2>
+    </div>
+
+    <div class="faq-list reveal">
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span>Hizmetler hakkında nasıl bilgi alabilirim?</span>
+          <span>+</span>
+        </button>
+        <div class="faq-a">
+          <p>Telefon veya WhatsApp üzerinden işletmeyle doğrudan iletişim kurabilirsiniz.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span>İşlem süresi ne kadar?</span>
+          <span>+</span>
+        </button>
+        <div class="faq-a">
+          <p>İşlem süresi aracın durumuna ve seçilen uygulamaya göre değişebilir. Güncel bilgi için işletmeden bilgi alınabilir.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span>Konuma nasıl ulaşabilirim?</span>
+          <span>+</span>
+        </button>
+        <div class="faq-a">
+          <p>Sayfadaki “Yol tarifi” düğmesi üzerinden Blackdiamond'ın Mersin konumunu haritada açabilirsiniz.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span>Randevu gerekiyor mu?</span>
+          <span>+</span>
+        </button>
+        <div class="faq-a">
+          <p>Güncel yoğunluk ve randevu durumu için gitmeden önce işletmeyle telefon veya WhatsApp üzerinden iletişime geçmeniz önerilir.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="final-bg"></div>
+
+  <div class="final-content reveal">
+    <small>Blackdiamond automotive care · Mersin</small>
+
+    <h2>
+      READY<br>
+      TO SHINE?
+    </h2>
+
+    <div class="final-actions">
+      <a class="btn btn-white"
+         href="https://wa.me/905339663433?text=Merhaba%20Blackdiamond%2C%20bilgi%20almak%20istiyorum."
+         target="_blank" rel="noopener">
+        WhatsApp ↗
+      </a>
+
+      <a class="btn btn-dark" href="tel:+905339663433">
+        Hemen Ara
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div>
+        <div class="footer-brand">BLACKDIAMOND</div>
+        <p class="footer-note">
+          Blackdiamond Oto Yıkama için hazırlanmış bağımsız
+          web sitesi tasarım önizlemesi.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <small>Menü</small>
+        <a href="#hakkinda">Hakkında</a>
+        <a href="#hizmetler">Hizmetler</a>
+        <a href="#calismalar">Çalışmalar</a>
+        <a href="#iletisim">İletişim</a>
+      </div>
+
+      <div class="footer-col">
+        <small>İletişim</small>
+        <a href="tel:+905339663433">0533 966 34 33</a>
+        <p>Akdeniz · Mersin</p>
+      </div>
+
+    </div>
+
+    <div class="preview-note">
+      TASARIM ÖNİZLEMESİ · BU SAYFA BLACKDIAMOND OTO YIKAMA'NIN
+      RESMÎ WEB SİTESİ DEĞİLDİR. TEMSİLÎ GÖRSELLER İÇERİR.
+      NİHAİ SÜRÜMDE İŞLETME TARAFINDAN ONAYLANAN İÇERİKLERLE GÜNCELLENEBİLİR.
+    </div>
+
+  </div>
+</footer>
+
+<div class="mobile-bar">
+  <a href="https://wa.me/905339663433?text=Merhaba%20Blackdiamond%2C%20bilgi%20almak%20istiyorum."
+     target="_blank" rel="noopener">
+    WhatsApp
+  </a>
+  <a href="tel:+905339663433">Ara · 0533 966 34 33</a>
+</div>
+
+<script>
+/* loader */
+window.addEventListener("load",()=>{
+  setTimeout(()=>{
+    document.getElementById("loader").classList.add("hide");
+  },850);
+});
+
+/* navbar */
+const nav=document.getElementById("nav");
+window.addEventListener("scroll",()=>{
+  nav.classList.toggle("scrolled",window.scrollY>35);
+});
+
+/* mobile menu */
+const menuBtn=document.getElementById("menuBtn");
+const mobileMenu=document.getElementById("mobileMenu");
+
+menuBtn.addEventListener("click",()=>{
+  mobileMenu.classList.toggle("open");
+  document.body.classList.toggle("menu-open");
+});
+
+mobileMenu.querySelectorAll("a").forEach(link=>{
+  link.addEventListener("click",()=>{
+    mobileMenu.classList.remove("open");
+    document.body.classList.remove("menu-open");
+  });
+});
+
+/* scroll reveal */
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:.12});
+
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+
+/* FAQ */
+document.querySelectorAll(".faq-q").forEach(button=>{
+  button.addEventListener("click",()=>{
+    const item=button.parentElement;
+
+    document.querySelectorAll(".faq-item").forEach(other=>{
+      if(other!==item) other.classList.remove("open");
+    });
+
+    item.classList.toggle("open");
+  });
+});
+
+/* custom cursor */
+const cursor=document.getElementById("cursor");
+const ring=document.getElementById("cursorRing");
+
+let mouseX=0,mouseY=0;
+let ringX=0,ringY=0;
+
+document.addEventListener("mousemove",e=>{
+  mouseX=e.clientX;
+  mouseY=e.clientY;
+  cursor.style.left=mouseX+"px";
+  cursor.style.top=mouseY+"px";
+});
+
+function animateCursor(){
+  ringX+=(mouseX-ringX)*.14;
+  ringY+=(mouseY-ringY)*.14;
+  ring.style.left=ringX+"px";
+  ring.style.top=ringY+"px";
+  requestAnimationFrame(animateCursor);
+}
+animateCursor();
+
+/* diamond rotation */
+const diamond=document.getElementById("diamondShape");
+
+window.addEventListener("scroll",()=>{
+  const rect=diamond.parentElement.getBoundingClientRect();
+  const progress=(window.innerHeight-rect.top)/(window.innerHeight+rect.height);
+  diamond.style.transform=`rotate(${45+progress*90}deg)`;
+});
+
+/* hero subtle parallax */
+const heroBg=document.getElementById("heroBg");
+
+window.addEventListener("scroll",()=>{
+  if(window.scrollY<window.innerHeight){
+    heroBg.style.translate=`0 ${window.scrollY*.12}px`;
+  }
+});
+
+/* before-after comparison */
+const compare=document.getElementById("compare");
+const after=document.getElementById("compareAfter");
+const line=document.getElementById("compareLine");
+const handle=document.getElementById("compareHandle");
+
+let dragging=false;
+
+function setCompare(clientX){
+  const rect=compare.getBoundingClientRect();
+  let x=clientX-rect.left;
+  x=Math.max(0,Math.min(x,rect.width));
+  const percent=(x/rect.width)*100;
+
+  after.style.width=percent+"%";
+  line.style.left=percent+"%";
+  handle.style.left=percent+"%";
+}
+
+compare.addEventListener("mousedown",e=>{
+  dragging=true;
+  setCompare(e.clientX);
+});
+
+window.addEventListener("mousemove",e=>{
+  if(dragging) setCompare(e.clientX);
+});
+
+window.addEventListener("mouseup",()=>{
+  dragging=false;
+});
+
+compare.addEventListener("touchstart",e=>{
+  setCompare(e.touches[0].clientX);
+},{passive:true});
+
+compare.addEventListener("touchmove",e=>{
+  setCompare(e.touches[0].clientX);
+},{passive:true});
+
+/* keyboard accessibility for FAQ */
+document.querySelectorAll(".faq-q").forEach(btn=>{
+  btn.setAttribute("aria-expanded","false");
+
+  btn.addEventListener("click",()=>{
+    btn.setAttribute(
+      "aria-expanded",
+      btn.parentElement.classList.contains("open") ? "true" : "false"
+    );
+  });
+});
+</script>
+
+</body>
+</html>
